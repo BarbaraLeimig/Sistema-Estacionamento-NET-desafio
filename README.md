@@ -33,13 +33,40 @@ Por último, deverá ser feito um menu interativo com as seguintes ações imple
 3. Listar veículos
 4. Encerrar
 
+
 ## 🎯 Solução
 O código foi desenvolvido e complementado, criando-se um Sistema de Estacionamento em C#. O sistema permite que os usuários configurem taxas de estacionamento e realizem ações como adicionar, remover e listar os veículos no estacionamento. 
 
 A solução é composta por duas partes principais: 
 
+1. Programa Principal (Program.cs)
+- Define a codificação do console como UTF-8 para a exibição correta de caracteres acentuados.
+- Solicita aos usuários que forneçam o preço inicial e a taxa por hora para o estacionamento.
+- Trata exceções para entradas inválidas.
+- Utiliza um loop para o menu principal, permitindo que os usuários interajam com o sistema de estacionamento escolhendo opções como adicionar, remover ou listar veículos, bem como encerrar o programa.
+
+2. Classe Estacionamento (Estacionamento.cs)
+- Representa o estacionamento e contém propriedades para o preço inicial e taxa por hora.
+- Fornece métodos para adicionar (AdicionarVeiculo), remover (RemoverVeiculo) e listar (ListarVeiculos) veículos no estacionamento.
+- Utiliza Regex (Regular Expression) para validar formatos de placas de automóveis de acordo com o modelo padrão antigo e com o modelo padrão Mercosul.
+- Trata exceções de entradas inválidas
+
 ### Tecnologias Utilizadas
+![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white)
 
-### Requisitos
+![.Net](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
 
-### Como Executar
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+
+### ✔ Requisitos
+- SDK .NET Core para compilar e executar a aplicação
+
+### 🎁 Como Executar
+- Abra o terminal do seu VS Code ou prompt de comando
+- Navegue até o diretório onde está salvo o projeto
+- Execute os comandos
+    - dotnet build
+    - dotnet run
+- Siga as orientações do programa ^^
