@@ -49,7 +49,7 @@ namespace DesafioFundamentos.Models
                 // Utiliza Regular Expression para verificar se a placa é válida (padrão normal ou Mercosul)
                 Regex regex = new Regex(@"^[a-zA-Z]{3}-\d{4}$|^[a-zA-Z]{3}\d[a-zA-Z]\d{2}$");
 
-                // Verifica se a placa não é nula ou vazia e se corresponde ao padrão settado com o Regex
+                // Verifica se a placa não é nula ou vazia e se corresponde ao padrão definido com o Regex
                 if (!string.IsNullOrWhiteSpace(placa) && regex.IsMatch(placa))
                 {
                     // Adiciona o veículo
