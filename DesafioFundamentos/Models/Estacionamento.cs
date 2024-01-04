@@ -2,14 +2,36 @@ namespace DesafioFundamentos.Models
 {
     public class Estacionamento
     {
-        private decimal precoInicial = 0;
-        private decimal precoPorHora = 0;
+        private decimal _precoInicial;
+        private decimal _precoPorHora;
         private List<string> veiculos = new List<string>();
+
+        public decimal PrecoInicial
+        {
+            get => _precoInicial;
+            set
+            {
+                if (value < 0)
+                    throw new ArgumentException("\nO valor inserido não pode ser negativo.");
+                _precoInicial = value;
+            }
+        }
+
+        public decimal PrecoPorHora
+        {
+            get => _precoPorHora;
+            set
+            {
+                if (value < 0)
+                    throw new ArgumentException("\nO valor inserido não pode ser negativo.");
+                _precoPorHora = value;
+            }
+        }
 
         public Estacionamento(decimal precoInicial, decimal precoPorHora)
         {
-            this.precoInicial = precoInicial;
-            this.precoPorHora = precoPorHora;
+            PrecoInicial = precoInicial;
+            PrecoPorHora = precoPorHora;
         }
 
         public void AdicionarVeiculo()
@@ -36,7 +58,7 @@ namespace DesafioFundamentos.Models
                 // TODO: Realizar o seguinte cálculo: "precoInicial + precoPorHora * horas" para a variável valorTotal                
                 // *IMPLEMENTE AQUI*
                 int horas = 0;
-                decimal valorTotal = 0; 
+                decimal valorTotal = 0;
 
                 // TODO: Remover a placa digitada da lista de veículos
                 // *IMPLEMENTE AQUI*
