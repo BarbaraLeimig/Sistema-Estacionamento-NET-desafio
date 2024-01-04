@@ -39,13 +39,13 @@ O código foi desenvolvido e complementado, criando-se um Sistema de Estacioname
 
 A solução é composta por duas partes principais: 
 
-1. Programa Principal (Program.cs)
+**1. Programa Principal (Program.cs)**
 - Define a codificação do console como UTF-8 para a exibição correta de caracteres acentuados.
 - Solicita aos usuários que forneçam o preço inicial e a taxa por hora para o estacionamento.
 - Trata exceções para entradas inválidas.
 - Utiliza um loop para o menu principal, permitindo que os usuários interajam com o sistema de estacionamento escolhendo opções como adicionar, remover ou listar veículos, bem como encerrar o programa.
 
-2. Classe Estacionamento (Estacionamento.cs)
+**2. Classe Estacionamento (Estacionamento.cs)**
 - Representa o estacionamento e contém propriedades para o preço inicial e taxa por hora.
 - Fornece métodos para adicionar (AdicionarVeiculo), remover (RemoverVeiculo) e listar (ListarVeiculos) veículos no estacionamento.
 - Utiliza Regex (Regular Expression) para validar formatos de placas de automóveis de acordo com o modelo padrão antigo e com o modelo padrão Mercosul.
