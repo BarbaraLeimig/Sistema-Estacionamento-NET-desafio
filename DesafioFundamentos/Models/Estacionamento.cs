@@ -45,17 +45,14 @@ namespace DesafioFundamentos.Models
             {
                 Console.WriteLine("Digite a placa do veículo para estacionar:");
                 string placa = Console.ReadLine().ToUpper();
-
                 // Utiliza Regular Expression para verificar se a placa é válida (padrão normal ou Mercosul)
                 Regex regex = new Regex(@"^[a-zA-Z]{3}-\d{4}$|^[a-zA-Z]{3}\d[a-zA-Z]\d{2}$");
-
                 // Verifica se a placa não é nula ou vazia e se corresponde ao padrão definido com o Regex
                 if (!string.IsNullOrWhiteSpace(placa) && regex.IsMatch(placa))
                 {
                     // Adiciona o veículo
                     veiculos.Add(placa);
                     Console.WriteLine($"Veículo de placa {placa} estacionado com sucesso!");
-
                     // Se chegarmos aqui, siginifica que a placa é válida e foi adicionada ao sistema. Sai do loop.
                     break;
                 }
@@ -74,7 +71,6 @@ namespace DesafioFundamentos.Models
             {
                 Console.WriteLine("Digite a placa do veículo para remover:");
                 string placa = Console.ReadLine().ToUpper();
-
                 // Verifica se a placa do veículo é nula ou está em branco
                 if (!string.IsNullOrWhiteSpace(placa))
                 {
@@ -85,15 +81,12 @@ namespace DesafioFundamentos.Models
                         while (true)
                         {
                             Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
-
                             if (int.TryParse(Console.ReadLine(), out int horas) && horas >= 0)
                             {
                                 // Calcula o valor total a ser pago
                                 decimal valorTotal = PrecoInicial + PrecoPorHora * horas;
-
                                 // Remove a placa da lista de veículos
                                 veiculos.Remove(placa);
-
                                 Console.Clear();
                                 Console.WriteLine($"O veículo de placa {placa} foi removido e o preço total foi de: {valorTotal:C}");
                                 break;
@@ -125,7 +118,6 @@ namespace DesafioFundamentos.Models
             {
                 Console.Clear();
                 Console.WriteLine("\nOs veículos estacionados são:");
-
                 int i = 0;
                 foreach (string veiculo in veiculos)
                 {
