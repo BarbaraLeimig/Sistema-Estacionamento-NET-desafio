@@ -22,7 +22,6 @@ while (true)
         Console.Write("\nDigite o preço por hora: ");
         precoPorHora = Convert.ToDecimal(Console.ReadLine());
         es.PrecoPorHora = precoPorHora; // Lança uma exceção se o valor for inválido
-
         // Se chegarmos aqui, significa que nenhum erro ocorreu e podemos sair do loop
         break;
     }
