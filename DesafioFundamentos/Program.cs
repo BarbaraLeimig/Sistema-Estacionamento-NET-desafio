@@ -3,20 +3,13 @@
 // Coloca o encoding para UTF8 para exibir acentuação
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 
+Console.WriteLine("Seja bem vindo ao sistema de estacionamento!\n");
+
 decimal precoInicial = 0;
 decimal precoPorHora = 0;
 
-/* Console.WriteLine("Seja bem vindo ao sistema de estacionamento!\n" +
-                  "Digite o preço inicial:");
-precoInicial = Convert.ToDecimal(Console.ReadLine());
-
-Console.WriteLine("Agora digite o preço por hora:");
-precoPorHora = Convert.ToDecimal(Console.ReadLine()); */
-
-// Instancia a classe Estacionamento, já com os valores obtidos anteriormente
+// Instancia a classe Estacionamento
 Estacionamento es = new Estacionamento(precoInicial, precoPorHora);
-
-Console.WriteLine("Seja bem vindo ao sistema de estacionamento!\n");
 
 while (true)
 {
@@ -25,22 +18,22 @@ while (true)
         Console.Write("Digite o preço inicial: ");
         precoInicial = Convert.ToDecimal(Console.ReadLine());
         es.PrecoInicial = precoInicial; // Lança uma exceção se o valor for inválido
-        Console.Clear();
 
         Console.Write("\nDigite o preço por hora: ");
         precoPorHora = Convert.ToDecimal(Console.ReadLine());
         es.PrecoPorHora = precoPorHora; // Lança uma exceção se o valor for inválido
-        Console.Clear();
 
-        break; // Se chegarmos aqui, significa que nenhum erro ocorreu e podemos sair do loop
+        // Se chegarmos aqui, significa que nenhum erro ocorreu e podemos sair do loop
+        break;
     }
     catch (ArgumentException ex)
     {
-        Console.WriteLine(ex.Message); // Imprime a mensagem de erro
-        Console.WriteLine("Por favor, tente novamente.\n");
+        Console.Clear();
+        Console.WriteLine(ex.Message);
     }
     catch (FormatException)
     {
+        Console.Clear();
         Console.WriteLine("\nEntrada inválida. Por favor, digite um número.");
     }
 }
@@ -81,7 +74,7 @@ while (exibirMenu)
             break;
     }
 
-    Console.WriteLine("Pressione uma tecla para continuar");
+    Console.WriteLine("Pressione a tecla 'Enter' para continuar");
     Console.ReadLine();
 }
 
