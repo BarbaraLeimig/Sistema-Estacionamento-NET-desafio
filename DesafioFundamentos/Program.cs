@@ -9,7 +9,7 @@ decimal precoInicial = 0;
 decimal precoPorHora = 0;
 
 // Instancia a classe Estacionamento
-Estacionamento es = new Estacionamento(precoInicial, precoPorHora);
+Estacionamento estacionamento = new Estacionamento(precoInicial, precoPorHora);
 
 while (true)
 {
@@ -17,11 +17,11 @@ while (true)
     {
         Console.Write("Digite o preço inicial: ");
         precoInicial = Convert.ToDecimal(Console.ReadLine());
-        es.PrecoInicial = precoInicial; // Lança uma exceção se o valor for inválido
+        estacionamento.PrecoInicial = precoInicial; // Lança uma exceção se o valor for inválido
 
         Console.Write("\nDigite o preço por hora: ");
         precoPorHora = Convert.ToDecimal(Console.ReadLine());
-        es.PrecoPorHora = precoPorHora; // Lança uma exceção se o valor for inválido
+        estacionamento.PrecoPorHora = precoPorHora; // Lança uma exceção se o valor for inválido
         // Se chegarmos aqui, significa que nenhum erro ocorreu e podemos sair do loop
         break;
     }
@@ -37,7 +37,6 @@ while (true)
     }
 }
 
-string opcao = string.Empty;
 bool exibirMenu = true;
 
 // Realiza o loop do menu
@@ -53,15 +52,15 @@ while (exibirMenu)
     switch (Console.ReadLine())
     {
         case "1":
-            es.AdicionarVeiculo();
+            estacionamento.AdicionarVeiculo();
             break;
 
         case "2":
-            es.RemoverVeiculo();
+            estacionamento.RemoverVeiculo();
             break;
 
         case "3":
-            es.ListarVeiculos();
+            estacionamento.ListarVeiculos();
             break;
 
         case "4":
