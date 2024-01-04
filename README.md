@@ -32,3 +32,14 @@ Por último, deverá ser feito um menu interativo com as seguintes ações imple
 2. Remover veículo
 3. Listar veículos
 4. Encerrar
+
+## 🎯 Solução
+O código foi desenvolvido e complementado, criando-se um Sistema de Estacionamento em C#. O sistema permite que os usuários configurem taxas de estacionamento e realizem ações como adicionar, remover e listar os veículos no estacionamento. 
+
+A solução é composta por duas partes principais: 
+
+### Tecnologias Utilizadas
+
+### Requisitos
+
+### Como Executar
