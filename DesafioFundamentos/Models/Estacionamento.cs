@@ -14,7 +14,7 @@ namespace DesafioFundamentos.Models
             get => _precoInicial;
             set
             {
-                if (value < 0)
+                if (value < 0) 
                     throw new ArgumentException("\nO valor inserido não pode ser negativo. Por favor, tente novamente.\n");
                 _precoInicial = value;
             }
@@ -52,13 +52,13 @@ namespace DesafioFundamentos.Models
                 {
                     // Adiciona o veículo
                     veiculos.Add(placa);
-                    Console.WriteLine($"Veículo de placa {placa} estacionado com sucesso!");
+                    Console.WriteLine($"\nVeículo de placa {placa} estacionado com sucesso!");
                     // Se chegarmos aqui, siginifica que a placa é válida e foi adicionada ao sistema. Sai do loop.
                     break;
                 }
                 else
                 {
-                    Console.WriteLine("A placa do veículo está em branco ou é inválida! Por favor, digite uma placa válida.");
+                    Console.WriteLine("A placa do veículo está em branco ou é inválida! Por favor, digite uma placa válida.\n");
                 }
             }
         }
@@ -69,7 +69,7 @@ namespace DesafioFundamentos.Models
             // Loop para remover veículo existente
             while (true)
             {
-                Console.WriteLine("Digite a placa do veículo para remover:");
+                Console.WriteLine("Digite a placa do veículo que deseja remover:");
                 string placa = Console.ReadLine().ToUpper();
                 // Verifica se a placa do veículo é nula ou está em branco
                 if (!string.IsNullOrWhiteSpace(placa))
@@ -80,7 +80,7 @@ namespace DesafioFundamentos.Models
                         // loop para digitar quantidade de horas válidas
                         while (true)
                         {
-                            Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
+                            Console.WriteLine("\nDigite a quantidade de horas que o veículo permaneceu estacionado:");
                             if (int.TryParse(Console.ReadLine(), out int horas) && horas >= 0)
                             {
                                 // Calcula o valor total a ser pago
@@ -88,12 +88,12 @@ namespace DesafioFundamentos.Models
                                 // Remove a placa da lista de veículos
                                 veiculos.Remove(placa);
                                 Console.Clear();
-                                Console.WriteLine($"O veículo de placa {placa} foi removido e o preço total foi de: {valorTotal:C}");
+                                Console.WriteLine($"O veículo de placa {placa} foi removido e o preço total foi de: {valorTotal:C}.");
                                 break;
                             }
                             else
                             {
-                                Console.WriteLine("A quantiade de horas não pode ser um valor negativo ou vazio.");
+                                Console.WriteLine("Atenção: a quantidade de horas deve ser um número inteiro positivo!");
                             }
                         }
                         // Se chegarmos aqui, siginifica que a placa é válida e foi removida do sistema. Sai do loop.
@@ -101,7 +101,7 @@ namespace DesafioFundamentos.Models
                     }
                     else
                     {
-                        Console.WriteLine("Desculpe, esse veículo não está estacionado aqui. Confira se digitou a placa corretamente");
+                        Console.WriteLine("Desculpe, esse veículo não está estacionado aqui. Confira se digitou a placa corretamente.\n");
                     }
                 }
                 else
