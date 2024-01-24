@@ -29,6 +29,12 @@ Este desafio consistiu em usar os conhecimentos adquiridos no módulo de fundame
 Para obter um programa funcional, foi cumprida a missão de continuar o código fornecido pela metade, respeitando e implementando os requisitos descritos acima. 
 Neste sistema, é permitido interagir com o usuário através do console para realizar registro dos valores cobrados no estacionamento, cadastro, remoção e listagem de veículos, bem como encerrar o programa.
 
+### Funcionalidades
+✔ Cadastrar os valores do Estacionamento
+✔ Remover veículo
+✔ Listar veículos
+✔ Encerrar programa
+
 ### Especificações Técnicas
 
 A solução é composta por duas partes principais: 
@@ -54,7 +60,7 @@ A solução é composta por duas partes principais:
 
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
-## ✔ Dependências e Versões Necessárias
+## ⚙ Dependências e Versões Necessárias
 - SDK .NET Core para compilar e executar a aplicação
 
 ## 🎁 Como Executar
