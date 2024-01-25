@@ -1,6 +1,6 @@
 # DIO - Trilha .NET - Fundamentos
 
-## 🐱‍👤 Desafio do Projeto 
+## 🐱‍👤 Desafio de Projeto 
 Este desafio consistiu em usar os conhecimentos adquiridos no módulo de fundamentos, da trilha .NET da DIO. O desenvolvedor foi contratado para construir um sistema de estacionamento, usado para gerenciar os veículos estacionados e realizar suas operações, como por exemplo adicionar um veículo, remover um veículo (e exibir o valor cobrado durante o período) e listar os veículos.
 
 ## 🚗 Requisitos do Projeto
