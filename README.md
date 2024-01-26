@@ -78,12 +78,12 @@ A solução é composta por duas partes principais:
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
 ## ⚙ Dependências e Versões 
-- **SDK .NET** - Versão: 8.0.100 ou 8.0.101 (para compilar e executar a aplicação)
-- **Visual Studio Code** - Versão: 1.84.1 (editor de código)
-- **Git** - Versão: 2.43.0 (versionamento do código)
+- **[SDK .NET](https://dotnet.microsoft.com/pt-br/download)** - Versão: 8.0.100 ou 8.0.101 (para compilar e executar a aplicação)
+- **[Visual Studio Code](https://code.visualstudio.com/download)** - Versão: 1.84.1 (editor de código)
+- **[Git](https://git-scm.com/downloads)** - Versão: 2.43.0 (versionamento do código)
 
 ## 🕹 Como Executar a Aplicação
-1. Instale o [.NET](https://dotnet.microsoft.com/pt-br/download) na versão recomendada em sua máquina
+1. Instale em sua máquina as dependências acima, nas versões recomendadas.
 2. Clone o repositório para a sua máquina local. Você pode utiizar um dos seguintes comandos:
 ```
 git clone https://github.com/BarbaraLeimig/Sistema-Estacionamento-NET-desafio.git
