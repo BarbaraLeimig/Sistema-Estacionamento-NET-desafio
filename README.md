@@ -29,7 +29,7 @@ Este desafio consistiu em usar os conhecimentos adquiridos no módulo de fundame
 Para obter um programa funcional, foi cumprida a missão de continuar o código fornecido pela metade, respeitando e implementando os requisitos descritos acima. Neste sistema, é permitido interagir com o usuário através do console para realizar registro dos valores cobrados no estacionamento, cadastro, remoção e listagem de veículos, bem como encerrar o programa.
 
 Veja em mais detalhes o [fluxograma](https://modeler.cloud.camunda.io/share/f8ed33a4-34a9-4632-89cc-de8002915beb) da aplicação.
-![fluxograma](fluxogramaEestacionamento.png)
+![fluxograma](fluxogramaEstacionamento.png)
 
 ### 📄 Funcionalidades
 - Cadastrar os valores do Estacionamento
