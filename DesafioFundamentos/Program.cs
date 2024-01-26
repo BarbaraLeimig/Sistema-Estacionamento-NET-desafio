@@ -18,6 +18,19 @@ namespace DesafioFundamentos
             // Instancia a classe Estacionamento
             Estacionamento estacionamento = new Estacionamento(precoInicial, precoPorHora);
 
+            // Solicita os valores do estacionamento
+            SolicitarValores(estacionamento);
+
+            // Exibe o menu do estacionamento
+            while (true)
+            {
+                ExibirMenu(estacionamento);
+            }
+        }
+
+        // Método para solicitar os valores do estacionamento
+        static void SolicitarValores(Estacionamento estacionamento)
+        {
             while (true)
             {
                 try
@@ -41,17 +54,9 @@ namespace DesafioFundamentos
                     Console.WriteLine("\nEntrada inválida. Por favor, digite um número.");
                 }
             }
-
-            bool exibirMenu = true;
-
-            while (exibirMenu)
-            {
-                exibirMenu = ExibirMenu(estacionamento);
-            }
-
-            Console.WriteLine("\nO programa se encerrou");
         }
 
+        // Método para exibir o menu da aplicação
         static bool ExibirMenu(Estacionamento estacionamento)
         {
             Console.Clear();
@@ -83,7 +88,8 @@ namespace DesafioFundamentos
                         confirmacao = Console.ReadLine();
                         if (confirmacao.ToLower() == "s")
                         {
-                            return false;
+                            Console.WriteLine("\nO programa se encerrou");
+                            Environment.Exit(0);
                         }
                         else if (confirmacao.ToLower() != "n")
                         {
