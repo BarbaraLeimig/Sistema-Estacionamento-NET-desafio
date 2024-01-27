@@ -120,11 +120,9 @@ namespace DesafioFundamentos.Models
             {
                 Console.Clear();
                 Console.WriteLine("\nOs veículos estacionados são:");
-                int i = 0;
-                foreach (string veiculo in veiculos)
+                for(int i = 0; i < veiculos.Count; i++)
                 {
-                    Console.WriteLine($"Veículo {i + 1}: {veiculo}");
-                    i++;
+                    Console.WriteLine($"Veículo {i + 1}: {veiculos[i]}");
                 }
             }
             else
