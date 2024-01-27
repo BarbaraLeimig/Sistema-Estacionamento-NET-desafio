@@ -45,8 +45,10 @@ namespace DesafioFundamentos.Models
             {
                 Console.WriteLine("Digite a placa do veículo para estacionar:");
                 string placa = Console.ReadLine().ToUpper();
+                
                 // Utiliza Regular Expression para verificar se a placa é válida (padrão normal ou Mercosul)
                 Regex regex = new Regex(@"^[a-zA-Z]{3}-\d{4}$|^[a-zA-Z]{3}\d[a-zA-Z]\d{2}$");
+
                 // Verifica se a placa não é nula ou vazia e se corresponde ao padrão definido com o Regex
                 if (!string.IsNullOrWhiteSpace(placa) && regex.IsMatch(placa))
                 {
