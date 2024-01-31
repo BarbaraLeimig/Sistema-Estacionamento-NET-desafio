@@ -26,7 +26,7 @@ Este desafio consistiu em usar os conhecimentos adquiridos no módulo de fundame
 ## 🎯 Solução
 Para obter um programa funcional, foi cumprida a missão de continuar o código fornecido incompleto, baseando-se nos requisitos descritos acima. Com o objetivo de aplicar os conhecimentos adquiridos no `Bootcamp Decola Tech` 2024, o código foi reformulado visando desenvolver um sistema de estacionamento mais completo e robusto. Neste sistema, usuário pode interagir com a aplicação através do console, encontrando uma área para que este gerencie seus dados pessoais e de seus veículos, e outra para as interações relacionadas ao estacionamento. O código foi desenvolvido em inglês, exceto textos exibidos no console, com o intuito de praticar a escrita na linguagem referida.
 
-<img width="350" src="https://github.com/BarbaraLeimig/Sistema-Estacionamento-NET-desafio/blob/main/diagrama_uml_estacionamento.png">
+<img src="https://github.com/BarbaraLeimig/Sistema-Estacionamento-NET-desafio/blob/main/diagrama_uml_estacionamento.png">
 
 ### 📄 Funcionalidades
 - Menus interativos
