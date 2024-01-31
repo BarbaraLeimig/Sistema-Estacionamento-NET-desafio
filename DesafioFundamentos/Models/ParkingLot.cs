@@ -668,7 +668,7 @@ namespace DesafioFundamentos.Models
         {
             if (AvailableCarSpaces() > 0)
             {
-                _parkedCars[plate] = DateTime.Now;
+                _parkedCars.Add(plate, DateTime.Now);
                 Console.WriteLine("\nCarro estacionado com sucesso!");
                 Proceed();
             }
@@ -683,7 +683,7 @@ namespace DesafioFundamentos.Models
         {
             if (AvailableMotorcycleSpaces() > 0)
             {
-                _parkedMotorcycles[plate] = DateTime.Now;
+                _parkedMotorcycles.Add(plate, DateTime.Now);
                 Console.WriteLine("\nMoto estacionada com sucesso!");
                 Proceed();
             }
