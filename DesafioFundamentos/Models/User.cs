@@ -10,6 +10,7 @@ namespace DesafioFundamentos.Models
         private string _fullName { get; set; }
         private string _cpf { get; set; }
         public List<Vehicle> Vehicles { get; set; } = new List<Vehicle>();
+        
         public string FullName
         {
             get => _fullName;

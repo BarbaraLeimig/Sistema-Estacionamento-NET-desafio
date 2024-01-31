@@ -20,6 +20,5 @@ namespace DesafioFundamentos.Models
             LicensePlate = licensePlate;
             Color = color;
         }
-
     }
 }

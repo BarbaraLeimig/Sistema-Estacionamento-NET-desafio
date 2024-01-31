@@ -19,6 +19,7 @@ namespace DesafioFundamentos.Models
         private List<User> _users = new List<User>();
         private Dictionary<string, DateTime> _parkedCars = new Dictionary<string, DateTime>();
         private Dictionary<string, DateTime> _parkedMotorcycles = new Dictionary<string, DateTime>();
+        User user;
         
         public void MainMenu()
         {
@@ -185,7 +186,7 @@ namespace DesafioFundamentos.Models
                     {
                         Console.Clear();
                         Console.WriteLine($"Usuario encontrado!\n" + $"Nome: {user.FullName}\n" + $"CPF: {user.Cpf}\n");
-                        for (int counter = 0; counter < user.Vehicles.Count(); counter++)
+                        for (int counter = 0; counter < user.Vehicles.Count; counter++)
                         {
                             Vehicle vehicle = user.Vehicles[counter];
                             Console.WriteLine($"Veículo {counter + 1}\n" +
@@ -385,7 +386,7 @@ namespace DesafioFundamentos.Models
                 {
                     Console.Clear();
                     Console.WriteLine($"Olá {user.FullName}! Veja abaixo os seus veículos cadastrados no nosso sistema:");
-                    for (int counter = 0; counter < user.Vehicles.Count(); counter++)
+                    for (int counter = 0; counter < user.Vehicles.Count; counter++)
                     {
                         Vehicle vehicle = user.Vehicles[counter];
                         Console.WriteLine($"\nVeículo {counter + 1}\n" +
