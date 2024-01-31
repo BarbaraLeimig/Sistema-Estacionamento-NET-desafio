@@ -19,7 +19,7 @@ namespace DesafioFundamentos.Models
         private List<User> _users = new List<User>();
         private Dictionary<string, DateTime> _parkedCars = new Dictionary<string, DateTime>();
         private Dictionary<string, DateTime> _parkedMotorcycles = new Dictionary<string, DateTime>();
-        
+
         public void MainMenu()
         {
             Console.WriteLine("Digite o número correspondente à área a qual deseja acesssar:\n" +
@@ -116,6 +116,91 @@ namespace DesafioFundamentos.Models
             Console.Clear();
         }
 
+        public void VehicleProfile()
+        {
+            Console.WriteLine("Escolha a área que deseja acessar:\n" +
+                                "1 - Cadastrar veículo\n" +
+                                "2 - Exibir veículo\n" +
+                                "3 - Editar veiculo\n" +
+                                "4 - Remover veículo\n" +
+                                "5 - Retornar à Área do Usuário");
+            string option = Console.ReadLine();
+            Console.Clear();
+            switch (option)
+            {
+                case "1":
+                    AddVehicle();
+                    break;
+                case "2":
+                    ShowVehicles();
+                    break;
+                case "3":
+                    EditVehicle();
+                    break;
+                case "4":
+                    RemoveVehicle();
+                    break;
+                case "5":
+                    UserAreaMenu();
+                    break;
+                default:
+                    Console.WriteLine("Opção inválida! Digite uma opção válida");
+                    Proceed();
+                    VehicleProfile();
+                    break;
+            }
+            Console.WriteLine("\nPressione a tecla 'Enter' para continuar");
+            Console.ReadLine();
+            Console.Clear();
+        }
+
+        public void ParkingAreaMenu()
+        {
+            Console.WriteLine("Escolha uma das opções abaixo:\n" +
+                               "1 - Estacionar veículo\n" +
+                               "2 - Listar veículos estacionados\n" +
+                               "3 - Listar vagas disponíveis para carro\n" +
+                               "4 - Listar vagas disponíveis para moto\n" +
+                               "5 - Deixar o estacinamento\n" +
+                               "6 - Retornar ao Menu Inicial");
+            string option = Console.ReadLine();
+            Console.Clear();
+            switch (option)
+            {
+                case "1":
+                    ParkVehicle();
+                    break;
+                case "2":
+                    ShowParkedVehicles();
+                    break;
+                case "3":
+                    Console.WriteLine($"Atualmente temos {AvailableCarSpaces()} vagas disponíveis para carros.");
+                    Proceed();
+                    ParkingAreaMenu();
+                    break;
+                case "4":
+                    Console.WriteLine($"Atualmente temos {AvailableMotorcycleSpaces()} vagas disponíveis para motos.");
+                    Proceed();
+                    ParkingAreaMenu();
+                    break;
+                case "5":
+                    RemoveParkedVehicle();
+                    break;
+                case "6":
+                    MainMenu();
+                    break;
+                default:
+                    Console.WriteLine("Opção inválida! Digite uma opção válida");
+                    Proceed();
+                    ParkingAreaMenu();
+                    break;
+            }
+            Console.WriteLine("\nPressione a tecla 'Enter' para continuar");
+            Console.ReadLine();
+            Console.Clear();
+        }
+
+
         // Método para encerramento da aplicação
         public void TerminateProgram()
         {
@@ -143,7 +228,7 @@ namespace DesafioFundamentos.Models
             }
         }
 
-        // Métodos do CRUD Usuario
+        // Métodos CRUD referentes ao UserProfile
         public void AddUser()
         {
             while (true)
@@ -266,7 +351,7 @@ namespace DesafioFundamentos.Models
                     switch (Console.ReadLine())
                     {
                         case "s":
-                            _users.Remove(user); 
+                            _users.Remove(user);
                             Console.WriteLine("Usuário removido com sucesso!");
                             Proceed();
                             delete = false;
@@ -292,45 +377,7 @@ namespace DesafioFundamentos.Models
             UserProfile();
         }
 
-        public void VehicleProfile()
-        {
-            Console.WriteLine("Escolha a área que deseja acessar:\n" +
-                                "1 - Cadastrar veículo\n" +
-                                "2 - Exibir veículo\n" +
-                                "3 - Editar veiculo\n" +
-                                "4 - Remover veículo\n" +
-                                "5 - Retornar à Área do Usuário");
-            string option = Console.ReadLine();
-            Console.Clear();
-            switch (option)
-            {
-                case "1":
-                    AddVehicle();
-                    break;
-                case "2":
-                    ShowVehicles();
-                    break;
-                case "3":
-                    EditVehicle();
-                    break;
-                case "4":
-                    RemoveVehicle();
-                    break;
-                case "5":
-                    UserAreaMenu();
-                    break;
-                default:
-                    Console.WriteLine("Opção inválida! Digite uma opção válida");
-                    Proceed();
-                    VehicleProfile();
-                    break;
-            }
-            Console.WriteLine("\nPressione a tecla 'Enter' para continuar");
-            Console.ReadLine();
-            Console.Clear();
-        }
-
-        // Métodos do CRUD Veiculo
+        // Métodos CRUD referentes ao VehicleProfile
         public void AddVehicle()
         {
             string cpf = InputData("Digite o CPF do usuário:");
@@ -495,53 +542,8 @@ namespace DesafioFundamentos.Models
             }
             VehicleProfile();
         }
-        public void ParkingAreaMenu()
-        {
-            Console.WriteLine("Escolha uma das opções abaixo:\n" +
-                               "1 - Estacionar veículo\n" +
-                               "2 - Listar veículos estacionados\n" +
-                               "3 - Listar vagas disponíveis para carro\n" +
-                               "4 - Listar vagas disponíveis para moto\n" +
-                               "5 - Deixar o estacinamento\n" +
-                               "6 - Retornar ao Menu Inicial");
-            string option = Console.ReadLine();
-            Console.Clear();
-            switch (option)
-            {
-                case "1":
-                    ParkVehicle();
-                    break;
-                case "2":
-                    ShowParkedVehicles();
-                    break;
-                case "3":
-                    Console.WriteLine($"Atualmente temos {AvailableCarSpaces()} vagas disponíveis para carros.");
-                    Proceed();
-                    ParkingAreaMenu();
-                    break;
-                case "4":
-                    Console.WriteLine($"Atualmente temos {AvailableMotorcycleSpaces()} vagas disponíveis para motos.");
-                    Proceed();
-                    ParkingAreaMenu();
-                    break;
-                case "5":
-                    RemoveParkedVehicle();
-                    break;
-                case "6":
-                    MainMenu();
-                    break;
-                default:
-                    Console.WriteLine("Opção inválida! Digite uma opção válida");
-                    Proceed();
-                    ParkingAreaMenu();
-                    break;
-            }
-            Console.WriteLine("\nPressione a tecla 'Enter' para continuar");
-            Console.ReadLine();
-            Console.Clear();
-        }
 
-        // Métodos do Estacionamento
+        // Métodos referentes à Área do Estacionamento
         public void ParkVehicle()
         {
             bool proceedLoop = true;
@@ -644,7 +646,7 @@ namespace DesafioFundamentos.Models
                         decimal totalPrice = _startingPrice + _pricePerHour * parkedHours;
                         Console.Clear();
                         Console.WriteLine($"Seu carro permaneceu estacionado por {parkedHours} hora(s). O valor total a ser pago é: {totalPrice:C}");
-                        Payment(totalPrice); 
+                        Payment(totalPrice);
                     }
                     else if (_parkedMotorcycles.ContainsKey(plate))
                     {
@@ -673,7 +675,7 @@ namespace DesafioFundamentos.Models
             ParkingAreaMenu();
         }
 
-        // MÉTODOS SECUNDÁRIOS DA APLICAÇÃO
+        // Métodos secundários da aplicação
 
         private void ParkCar(string plate)
         {
@@ -747,7 +749,7 @@ namespace DesafioFundamentos.Models
         private string InputData(string message)
         {
             Console.WriteLine(message);
-            return Console.ReadLine(); 
+            return Console.ReadLine();
         }
 
         public void Proceed()
