@@ -45,7 +45,6 @@ namespace DesafioFundamentos.Models
                     MainMenu();
                     break;
             }
-            Console.Clear();
         }
 
         public void UserAreaMenu()
@@ -73,9 +72,6 @@ namespace DesafioFundamentos.Models
                     UserAreaMenu();
                     break;
             }
-            Console.WriteLine("\nPressione a tecla 'Enter' para continuar");
-            Console.ReadLine();
-            Console.Clear();
         }
 
         public void UserProfile()
@@ -111,9 +107,6 @@ namespace DesafioFundamentos.Models
                     UserProfile();
                     break;
             }
-            Console.WriteLine("\nPressione a tecla 'Enter' para continuar");
-            Console.ReadLine();
-            Console.Clear();
         }
 
         public void VehicleProfile()
@@ -149,9 +142,6 @@ namespace DesafioFundamentos.Models
                     VehicleProfile();
                     break;
             }
-            Console.WriteLine("\nPressione a tecla 'Enter' para continuar");
-            Console.ReadLine();
-            Console.Clear();
         }
 
         public void ParkingAreaMenu()
@@ -195,9 +185,6 @@ namespace DesafioFundamentos.Models
                     ParkingAreaMenu();
                     break;
             }
-            Console.WriteLine("\nPressione a tecla 'Enter' para continuar");
-            Console.ReadLine();
-            Console.Clear();
         }
 
 
