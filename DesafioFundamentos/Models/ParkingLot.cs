@@ -584,17 +584,17 @@ namespace DesafioFundamentos.Models
                 if (_parkedCars.Any())
                 {
                     Console.WriteLine("\nCarros:");
-                    for (int i = 0; i < _parkedCars.Count; i++)
+                    for (int counter = 0; counter < _parkedCars.Count; counter++)
                     {
-                        Console.WriteLine($"{i + 1}: {_parkedCars.ElementAt(i).Key}");
+                        Console.WriteLine($"{counter + 1}: {_parkedCars.ElementAt(counter).Key}");
                     }
                 }
                 if (_parkedMotorcycles.Any())
                 {
                     Console.WriteLine("\nMotos:");
-                    for (int i = 0; i < _parkedMotorcycles.Count; i++)
+                    for (int counter = 0; counter < _parkedMotorcycles.Count; counter++)
                     {
-                        Console.WriteLine($"{i + 1}: {_parkedMotorcycles.ElementAt(i).Key}");
+                        Console.WriteLine($"{counter + 1}: {_parkedMotorcycles.ElementAt(counter).Key}");
                     }
                 }
             }
