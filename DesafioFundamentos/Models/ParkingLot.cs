@@ -19,7 +19,6 @@ namespace DesafioFundamentos.Models
         private List<User> _users = new List<User>();
         private Dictionary<string, DateTime> _parkedCars = new Dictionary<string, DateTime>();
         private Dictionary<string, DateTime> _parkedMotorcycles = new Dictionary<string, DateTime>();
-        User user;
         
         public void MainMenu()
         {
