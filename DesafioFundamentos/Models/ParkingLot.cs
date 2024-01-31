@@ -630,7 +630,7 @@ namespace DesafioFundamentos.Models
                         DateTime checkinHour = _parkedCars[plate];
                         _parkedCars.Remove(plate);
                         int parkedHours = (int)Math.Ceiling((DateTime.Now - checkinHour).TotalHours);
-                        decimal totalPrice = _startingPrice + _pricePerHour * parkedHours;
+                        decimal totalPrice = _startingPrice + _pricePerHour * (parkedHours - 1);
                         Console.Clear();
                         Console.WriteLine($"Seu carro permaneceu estacionado por {parkedHours} hora(s). O valor total a ser pago é: {totalPrice:C}");
                         Payment(totalPrice);
@@ -640,7 +640,7 @@ namespace DesafioFundamentos.Models
                         DateTime checkinHour = _parkedMotorcycles[plate];
                         _parkedMotorcycles.Remove(plate);
                         int parkedHours = (int)Math.Ceiling((DateTime.Now - checkinHour).TotalHours);
-                        decimal totalPrice = _startingPrice + _pricePerHour * parkedHours;
+                        decimal totalPrice = _startingPrice + _pricePerHour * (parkedHours - 1);
                         Console.Clear();
                         Console.WriteLine($"Sua moto permaneceu estacionada por {parkedHours} hora(s). O valor total a ser pago é: {totalPrice:C}");
                         Payment(totalPrice);
