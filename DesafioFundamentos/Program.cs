@@ -11,7 +11,7 @@ namespace DesafioFundamentos
 
             Console.WriteLine("\nSeja bem vindo ao Estacionamento SmartPark Recife Antigo!\n");
 
-            // Instancia a classe Estacionamento
+            // Instancia a classe Parking Lot
             ParkingLot parkingLot = new ParkingLot();
 
             // Exibe o menu do estacionamento
