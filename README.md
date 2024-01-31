@@ -3,18 +3,16 @@
 ## 🐱‍👤 Desafio de Projeto 
 Este desafio consistiu em usar os conhecimentos adquiridos no módulo de fundamentos, da trilha .NET da DIO. O desenvolvedor foi contratado para construir um sistema de estacionamento, usado para gerenciar os veículos estacionados e realizar suas operações, como por exemplo adicionar um veículo, remover um veículo (e exibir o valor cobrado durante o período) e listar os veículos.
 
-## 🚗 Requisitos do Projeto
+## 🚗 Proposta Inicial do Projeto 
 - [x]  **Construir uma classe chamada "Estacionamento", conforme o diagrama abaixo:**
-![Diagrama de classe estacionamento](diagrama_classe_estacionamento.png)
+<img width="210" src"https://github.com/BarbaraLeimig/Sistema-Estacionamento-NET-desafio/blob/main/diagrama_classe_estacionamento.png">
 
 **A classe deve conter três variáveis, sendo:**
-
 - [x]  **precoInicial**: Tipo decimal. É o preço cobrado para deixar seu veículo estacionado.
 - [x]  **precoPorHora**: Tipo decimal. É o preço por hora que o veículo permanecer estacionado.
 - [x]  **veiculos**: É uma lista de string, representando uma coleção de veículos estacionados. Contém apenas a placa do veículo.
 
 **A classe deve conter três métodos, sendo:**
-
 - [x]  **AdicionarVeiculo**: Método responsável por receber uma placa digitada pelo usuário e guardar na variável **veiculos**.
 - [x]  **RemoverVeiculo**: Método responsável por verificar se um determinado veículo está estacionado, e caso positivo, irá pedir a quantidade de horas que ele permaneceu no estacionamento. Após isso, realiza o seguinte cálculo: **precoInicial** * **precoPorHora**, exibindo para o usuário.
 - [x]  **ListarVeiculos**: Lista todos os veículos presentes atualmente no estacionamento. Caso não haja nenhum, exibir a mensagem "Não há veículos estacionados".
@@ -26,47 +24,40 @@ Este desafio consistiu em usar os conhecimentos adquiridos no módulo de fundame
 4. Encerrar
 
 ## 🎯 Solução
-Para obter um programa funcional, foi cumprida a missão de continuar o código fornecido pela metade, respeitando e implementando os requisitos descritos acima. Neste sistema, é permitido interagir com o usuário através do console para realizar registro dos valores cobrados no estacionamento, cadastro, remoção e listagem de veículos, bem como encerrar o programa.
-
-Veja em mais detalhes o [fluxograma](https://modeler.cloud.camunda.io/share/f8ed33a4-34a9-4632-89cc-de8002915beb) da aplicação.
-![fluxograma](fluxogramaEstacionamento.png)
+Para obter um programa funcional, foi cumprida a missão de continuar o código fornecido incompleto, baseando-se nos requisitos descritos acima. Com o objetivo de aplicar os conhecimentos adquiridos no `Bootcamp Decola Tech` 2024, o código foi reformulado visando desenvolver um sistema de estacionamento mais completo e robusto. Neste sistema, usuário pode interagir com a aplicação através do console, encontrando uma área para que este gerencie seus dados pessoais e de seus veículos, e outra para as interações relacionadas ao estacionamento. O código foi desenvolvido em inglês, exceto textos exibidos no console, com o intuito de praticar a escrita na linguagem referida.
 
 ### 📄 Funcionalidades
-- Cadastrar os valores do Estacionamento
+- Menus interativos
+- Cadastrar usuário
+- Exibir informações do usuário
+- Editar dados do usuário
+- Excluir conta
 - Cadastrar veículo
-- Remover veículo
-- Listar veículos
-- Encerrar programa
+- Exibir veículos do usuário
+- Editar informações do veículo
+- Excluir veículo
+- Estacionar veículo
+- Exibir veículos estacionados
+- Exibir vagas disponíveis para carros e motos
+- Sair do estacionamento
+- Realizar pagamento do estacionamento
 
 ### 📖 Especificações Técnicas
 
-A solução é composta por duas partes principais: 
+A solução é composta por 6 (seis) classes:
+- **Program:** é responsável por iniciar o programa e gerenciar a interação inicial do usuário com o sistema de estacionamento.
+- **Vehicle:** é uma classe abstrata que representa um veículo genérico, definindo propriedades comuns como Brand, Model, LicensePlate, e Color. Ela também possui uma propriedade virtual VehicleType que pode ser sobrescrita por classes derivadas. A classe fornece um construtor protegido para inicializar essas propriedades. Como uma classe abstrata, Vehicle serve como uma classe base para outras classes de veículos mais específicas para herdar e compartilhar código comum.
+- **Car:** é uma subclasse da classe abstrata Vehicle. Ela herda todas as propriedades de Vehicle e especifica o tipo de veículo como “Carro”. A classe Car também possui um construtor que aceita uma marca, modelo, placa de licença e cor, e passa esses valores para o construtor da classe base Vehicle. Isso permite a criação de uma instância de Car com essas propriedades específicas.
+- **Motorcycle:** é uma subclasse da classe abstrata Vehicle. Ela herda todas as propriedades de Vehicle e especifica o tipo de veículo como “Moto”. A classe Motorcycle também possui um construtor que aceita uma marca, modelo, placa de licença e cor, e passa esses valores para o construtor da classe base Vehicle. Isso permite a criação de uma instância de Motorcycle com essas propriedades específicas.
+- **Users:** representa um usuário com propriedades como FullName (nome completo), Cpf (Cadastro de Pessoas Físicas) e uma lista de Vehicles (veículos). A classe possui métodos para definir e obter o nome completo e o CPF do usuário, com verificações para garantir que os valores não sejam nulos ou vazios. Além disso, a classe User tem um construtor que aceita o nome completo e o CPF como parâmetros e um método AddVehicle para adicionar um veículo à lista de veículos do usuário.
+- **ParkinLot:** fornece uma representação de um estacionamento que pode acomodar vários usuários e seus veículos, com funcionalidades para gerenciar ambos. Aplica validações para CPF utilizando a biblioteca DocsBRValidator e para placas de veículo, utilizando Regular Expressions (regex).
 
-**1. Programa Principal (Program.cs)**
-- Composto pela classe Program, que representa o programa principal da aplicação.
-- Define a codificação do console como UTF-8 para a exibição correta de caracteres acentuados.
-- Exibe para o usuário uma mensagem de boas-vindas com o nome do estacionamento.
-- Cria uma instância da classe Estacionamento, inicializando os atributos precoInicial e precoPorHora com zero.
-- Entra em um loop `while` para solicitar ao usuário que digite o preço inicial e o preço por hora do estacionamento, validando os valores e tratando possíveis exceções.
-- Entra em outro loop `while` para exibir um menu do tipo `switch` com quatro opções: cadastrar veículo, remover veículo, listar veículos e encerrar o programa.
-- Dependendo da escolha do usuário, chama um dos métodos da classe Estacionamento: AdicionarVeiculo, RemoverVeiculo ou ListarVeiculos.
-- Ao optar por encerrar o programa, o usuário deve confirmar sua escolha em um loop `while` que verifica a resposta.
-    - O loop termina se a resposta for “s”.
-    - O menu é exibido novamente se a resposta for “n”.
-    - Uma mensagem de erro é mostrada se a resposta for inválida e a confirmação é repetida.
-- Exibe uma mensagem informando que o programa se encerrou.
-
-**2. Classe Estacionamento (Estacionamento.cs)**
-- É uma classe que modela um estacionamento, com propriedades para o preço inicial e a taxa por hora, uma lista para guardar os veículos e métodos para executar as opções do menu da aplicação.
-- **_precoInicial:** um campo privado do tipo decimal que armazena o preço inicial do estacionamento.
-- **_precoPorHora:** um campo privado do tipo decimal que armazena o preço por hora do estacionamento.
-- **veiculos:** uma lista privada de strings que armazena as placas dos veículos estacionados.
-- **PrecoInicial:** uma propriedade pública do tipo decimal que permite acessar e modificar o valor do campo _precoInicial, lançando uma exceção do tipo ArgumentException se o valor for negativo.
-- **PrecoPorHora:** uma propriedade pública do tipo decimal que permite acessar e modificar o valor do campo _precoPorHora, lançando uma exceção do tipo ArgumentException se o valor for negativo.
-- **Estacionamento(decimal precoInicial, decimal precoPorHora):** um construtor público que recebe dois parâmetros do tipo decimal e inicializa as propriedades PrecoInicial e PrecoPorHora com os valores recebidos.
-- **AdicionarVeiculo():** um método público que não retorna nada e não recebe parâmetros. Ele limpa o console, entra em um loop `while` para solicitar ao usuário que digite a placa do veículo a ser estacionado, utiliza RegEx (Regular Expression) para validar se os formatos de placas de automóveis obedecem ao modelo padrão antigo ou ao modelo padrão Mercosul, adiciona a placa à lista de veículos e exibe uma mensagem de sucesso. Se a placa for inválida, exibe uma mensagem de erro e repete o loop.
-- **RemoverVeiculo():** um método público que não retorna nada e não recebe parâmetros. Ele limpa o console, entra em um loop `while` para solicitar ao usuário que digite a placa do veículo a ser removido, verifica se a placa existe na lista de veículos, entra em outro loop `while` para solicitar ao usuário que digite a quantidade de horas que o veículo permaneceu estacionado, valida o valor, calcula o preço total a ser pago, remove a placa da lista de veículos e exibe uma mensagem com o valor total. Se a placa não existir ou o valor for inválido, exibe uma mensagem de erro e repete o loop.
-- **ListarVeiculos():** é um método público que não retorna nada e não recebe parâmetros. Ele verifica se a lista de veículos está vazia ou não, usando o método Any(). Se a lista não estiver vazia, limpa o console e exibe uma mensagem informando os veículos estacionados. Usa uma variável inteira i para contar os veículos e um loop `foreach` para percorrer a lista de veículos. Dentro do loop, exibe a placa de cada veículo, usando a interpolação de strings para formatar a saída. Incrementa a variável i a cada iteração do loop. Se a lista estiver vazia, limpa o console e exibe uma mensagem informando que não há veículos estacionados.
+## 👩🏻‍💻 Versões do Projeto
+- **Versão 1.0:** versão original desenvolvida pelo professor Leonardo Buta para o Desafio Fundamentos da Trilha `C#` e `.NET` do BootCamp Decola Tech Avanade 2024.
+- **Versão 1.1:** versão desenvolvida por mim para conclusão do desafio de projeto Fundamentos da Trilha `C#` e `.NET` do BootCamp Decola Tech Avanade 2024. Veja em mais detalhes o [fluxograma](https://modeler.cloud.camunda.io/share/f8ed33a4-34a9-4632-89cc-de8002915beb) da aplicação.
+- **Versão 1.2:**  versão desenvolvida por mim, onde foram implementadas melhorias para aplicar mais dos conhecimentos que adquiri no BootCamp Decola Tech Avanade 2024.
+- **Versão 1.3:** versão em estudo e desenvolvimento para modularização do código, com o intuito de facilitar a reutilização, manutenção e aprimorar a organização do mesmo.
+- **Versão 2.0:** transformação do projeto em uma aplicação fullstack utilizando ASP .NET. Este processo envolve a prototipação de telas, criação de uma API RESTful, a integração com o front-end e a conexão com o banco de dados PostgreSQL.
 
 ## 💻 Tecnologias Utilizadas
 ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white)
@@ -96,8 +87,12 @@ git clone git@github.com:BarbaraLeimig/Sistema-Estacionamento-NET-desafio.git
 ```
 cd Desktop/Projetos/Estacionamento
 ```
-4. Execute o seguinte comando para iniciar o programa:
+4. Faça o download da bibliotca DocsBRValidator pelo terminal:
+```
+dotnet add package DocsBRValidator
+```
+5. Execute o seguinte comando para iniciar o programa:
 ```
 dotnet run
 ```
-5. Interaja com o programa seguindo as informações exibidas no console.
+6. Interaja com o programa seguindo as informações exibidas no console.
