@@ -493,7 +493,7 @@ namespace DesafioFundamentos.Models
                     Vehicle vehicle = user.Vehicles.SingleOrDefault(v => v.LicensePlate == plate);
                     if (vehicle != null)
                     {
-                        Console.WriteLine("Você deseja remover este usuário? Digite 's' para sim ou 'n' para não.");
+                        Console.WriteLine("Você deseja remover este veículo? Digite 's' para sim ou 'n' para não.");
                         switch (Console.ReadLine())
                         {
                             case "s":
